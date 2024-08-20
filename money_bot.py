@@ -3,7 +3,7 @@ from telebot import types
 
 
 # Create a Telegram bot object
-bot = telebot.TeleBot("7215023908:AAGyji867UGYX5J9UBS3w2h86Fsqaym80uc")
+bot = telebot.TeleBot("7363245322:AAGxSKIxS2sNrakxOWvjEwQxDL1St_i52LA")
 
 # Handle the '/start' command
 @bot.message_handler(commands=['start'])
@@ -42,10 +42,10 @@ def social_media(message):
     markup = types.InlineKeyboardMarkup()
 
     item1 = types.InlineKeyboardButton("Соц сети", callback_data='social')
-    item2 = types.InlineKeyboardButton("Сайт masters", callback_data='site')
+    item2 = types.InlineKeyboardButton("Сайт", callback_data='site')
     item3 = types.InlineKeyboardButton("Друзья", callback_data='recomend')
     item4 = types.InlineKeyboardButton("Почта", callback_data='email')
-    item5 = types.InlineKeyboardButton("Телевидение", callback_data='phone')
+    item5 = types.InlineKeyboardButton("Радио", callback_data='phone')
     item6 = types.InlineKeyboardButton("Другое", callback_data='walk')
     item7 = types.InlineKeyboardButton("Проходил(а) мимо", callback_data='other')
 
