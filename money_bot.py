@@ -26,7 +26,7 @@ def gender_callback(message):
 @bot.callback_query_handler(func=lambda call: call.data == 'Male' or call.data == 'Female')
 def age(call):
     markup = types.InlineKeyboardMarkup()
-    item1 = types.InlineKeyboardButton('Младше 18 лет', callback_data='smal')
+    item1 = types.InlineKeyboardButton('До 18 лет', callback_data='smal')
     item2 = types.InlineKeyboardButton('18-25 лет', callback_data='adult')
     item3 = types.InlineKeyboardButton('26-35 лет', callback_data='adults')
     item4 = types.InlineKeyboardButton('36-45 лет', callback_data='adultse')
