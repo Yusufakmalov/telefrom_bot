@@ -133,8 +133,7 @@ def holiday(message):
 def thank(message):
     bot.send_message(message.from_user.id, "Спасибо!")
 
-
-
+bot.delete_webhook()
 print("bot is working")
 bot.polling()
 
