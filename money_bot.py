@@ -14,7 +14,7 @@ def start_command(message):
     chat_id = message.chat.id
     user_id = message.from_user.id
     bot.send_message(message.from_user.id, 'Здравствуйте, Ваше имя? ')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, gender_callback)
 
@@ -27,7 +27,7 @@ def gender_callback(message):
     markup.add(item1, item2)
 
     bot.send_message(message.from_user.id, 'Выберите пол', reply_markup=markup)
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
 
 
@@ -43,7 +43,7 @@ def age(call):
     item7 = types.InlineKeyboardButton('Старше 65 лет', callback_data='elderly')
     markup.add(item1, item2, item3, item4, item5, item6, item7)
     bot.send_message(call.from_user.id, 'Возраст', reply_markup=markup)
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {call.from_user.first_name} {call.from_user.last_name} выбрал опцию: {call.data}')
     bot.register_next_step_handler(call.message, occupation)
 
@@ -63,13 +63,13 @@ def social_media(message):
     markup.add(item1, item2, item3, item4, item5, item6, item7)
 
     bot.send_message(message.from_user.id, 'Откуда вы узнали о Левашовском хлебозаводе и почему решили прийти?', reply_markup=markup)
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
 
 @bot.callback_query_handler(func=lambda call: call.data == 'social' or call.data == 'site' or call.data == 'recomend' or call.data == 'email' or call.data == 'phone' or call.data == 'walk' or call.data == 'other')
 def museum(call):
     bot.send_message(call.message.chat.id, 'Как часто вы посещаете Левашовский хлебазавод')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {call.from_user.first_name} {call.from_user.last_name} выбрал опцию: {call.data}')
     bot.register_next_step_handler(call.message, occupation)
     bot.register_next_step_handler(call.message, visitor)
@@ -87,7 +87,7 @@ def visitor(message):
     item5 = types.InlineKeyboardButton('С друзьями', callback_data='friends')
     markup.add(item1, item2, item3, item4, item5)
     bot.send_message(message.from_user.id, 'С кем вы посетили сегодня Левашовский хлебозавод?', reply_markup=markup)
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
 
 
@@ -97,67 +97,67 @@ def visitor(message):
 @bot.callback_query_handler(func=lambda call: call.data == 'one' or call.data == 'family' or call.data == 'child' or call.data == 'peer' or call.data == 'friends')
 def childage(call):
     bot.send_message(call.message.chat.id, 'Если вы были у нас с ребенком/детьми, какого возраста?')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {call.from_user.first_name} {call.from_user.last_name} выбрал опцию: {call.data}')
     bot.register_next_step_handler(call.message, occupation)
 @bot.message_handler(content_types=['text'])
 def occupation(message):
     bot.send_message(message.from_user.id, 'Расскажите, пожалуйста, о вашем роде деятельности?')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, museum)
 
 @bot.message_handler(content_types=['text'])
 def museum(message):
     bot.send_message(message.from_user.id, 'Как часто вы посещаете выставки/музеи/галереи? ')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, gallery)
 
 @bot.message_handler(content_types=['text'])
 def gallery(message):
     bot.send_message(message.from_user.id, 'Какие галереи, музеи, выставки в Санкт-Петербурге вы посещали за последний месяц / полгода? Напишите пожалуйста названия.')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, sites)
 
 @bot.message_handler(content_types=['text'])
 def sites(message):
     bot.send_message(message.from_user.id, 'На какие источники вы чаще всего ориентируетесь, когда планируете досуг? Можно указать конкретные каналы, сообщества, сайты, источники.  ')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, social)
 @bot.message_handler(content_types=['text'])
 def social(message):
     bot.send_message(message.from_user.id,'Какие соцсети вы используете регулярно (минимум раз в неделю)?')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, subscribe)
 
 @bot.message_handler(content_types=['text'])
 def subscribe(message):
     bot.send_message(message.from_user.id,'Подписаны ли вы на соцсети Левашовского хлебозавода, посещали ли наш сайт?')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, yusuf)
 
 @bot.message_handler(content_types=['text'])
 def yusuf(message):
     bot.send_message(message.from_user.id,'Если да, то расскажите, пожалуйста, насколько удобно вам было пользоваться сайтом.')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, holiday)
 
 @bot.message_handler(content_types=['text'])
 def holiday(message):
     bot.send_message(message.from_user.id,'Какие выставки и события вам хочется видеть чаще на Левашовском хлебозаводе?')
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
     bot.register_next_step_handler(message, thank)
 @bot.message_handler(content_types=['text'])
 def thank(message):
     bot.send_message(message.from_user.id, "Спасибо!")
-    bot.send_message('@Ksunmv',
+    bot.send_message('@yusuf_12309',
                      f'Пользователь {message.from_user.first_name} {message.from_user.last_name} ответил: {message.text}')
 
 
