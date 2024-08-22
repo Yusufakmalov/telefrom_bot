@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-
+print('bot gonna work')
 # Create a Telegram bot object
 bot = telebot.TeleBot("7363245322:AAGxSKIxS2sNrakxOWvjEwQxDL1St_i52LA")
 
@@ -121,7 +121,7 @@ def thank(message):
     bot.send_message(message.from_user.id, "Спасибо!")
 
 
-# Start the bot
+print("bot is working")
 bot.polling()
 
 
@@ -133,104 +133,6 @@ bot.polling()
 
 
 
-# @bot.callback_query_handler(func=lambda call: call.data == 'Male' or call.data == 'Female')
-# def social_callback(call):
-#     markup = types.InlineKeyboardMarkup()
-#
-#     item1 = types.InlineKeyboardButton("Первый раз", callback_data='first')
-#     item2 = types.InlineKeyboardButton("Уже бывал(а)", callback_data='been')
-#
-#     markup.add(item1, item2)
-#
-#     bot.send_message(call.from_user.id,
-#                          'Вы пришли на Левашовский хлебозавод первый раз или уже бывали у нас раньше?',
-#                          reply_markup=markup)
-#
-#
-# @bot.message_handler(content_types=['text'])
-# def social_media(message):
-#     markup = types.InlineKeyboardMarkup()
-#
-#     item1 = types.InlineKeyboardButton("Социальные сети", callback_data='Social Media')
-#     item2 = types.InlineKeyboardButton("Сайт masters/Левашовского Хлебозавода", callback_data='Site masters')
-#     item3 = types.InlineKeyboardButton("Рекомендации друзей или коллег", callback_data='recomendation of friends or colleges')
-#     item4 = types.InlineKeyboardButton("Почтовая рассылка", callback_data='email requiries')
-#     item5 = types.InlineKeyboardButton("Телевидение или новостные каналы", callback_data='television or news channel')
-#     item6 = types.InlineKeyboardButton("Просто проходил(а) мимо / живу недалеко и решил(а) зайти", callback_data='just walking around')
-#     item7 = types.InlineKeyboardButton("Другой источник", callback_data='Other')
-# #
-# #     markup.add(item1, item2, item3, item4, item5, item6, item7)
-# #
-# #     bot.send_message(message.from_user.id, 'Откуда вы узнали о Левашовском хлебозаводе и почему решили прийти?', reply_markup=markup)
-# #
-# #
-#
-#
-#
-# @bot.callback_query_handler(func=lambda call: call.data == 'Social Media')
-# def social_callback(call):
-#
-#     markup = types.InlineKeyboardMarkup()
-#
-#     item1 = types.InlineKeyboardButton("Telegram", callback_data='tg')
-#     item2 = types.InlineKeyboardButton("Instagram", callback_data='insta')
-#
-#     markup.add(item1, item2)
-#
-#     bot.send_message(call.from_user.id, 'Выберите социальную сеть', reply_markup=markup)
-# # Handle the inline button callback
-# @bot.callback_query_handler(func=lambda call: call.data == 'tg' or call.data == 'insta')
-# def social_callback(call):
-#     markup = types.InlineKeyboardMarkup()
-#
-#     item1 = types.InlineKeyboardButton("Первый раз", callback_data='first')
-#     item2 = types.InlineKeyboardButton("Уже бывал(а)", callback_data='been')
-#
-#     markup.add(item1, item2)
-#
-#     bot.send_message(call.from_user.id, 'Вы пришли на Левашовский хлебозавод первый раз или уже бывали у нас раньше?', reply_markup=markup)
-#
-#
-#
-#
-# # ---------------------------------------------------------------------------------------------------------
-# @bot.callback_query_handler(func=lambda call: call.data == 'Site masters' or call.data == 'recomendation of friends or colleges' or call.data == 'email requiries' or call.data == 'television or news channel' or call.data == 'just walking around')
-# def social_callback(call):
-#     markup = types.InlineKeyboardMarkup()
-#
-#     item1 = types.InlineKeyboardButton("Первый раз", callback_data='first')
-#     item2 = types.InlineKeyboardButton("Уже бывал(а)", callback_data='been')
-#
-#     markup.add(item1, item2)
-#
-#     bot.send_message(call.from_user.id, 'Вы пришли на Левашовский хлебозавод первый раз или уже бывали у нас раньше?', reply_markup=markup)
-
-
-# ----------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-# @bot.callback_query_handler(func=lambda call: call.data == 'Other')
-# def other_callback(call):
-#     bot.send_message(call.from_user.id, "Введите другой источник")
-
-# @bot.callback_query_handler(func=lambda call:call.data == 'Other')
-# def other_source_handler(message):
-#     # Add code to retrieve the user's input from the database
-#     # Send the next question to the user
-#     markup = types.InlineKeyboardMarkup()
-#
-#     item1 = types.InlineKeyboardButton("Первый раз", callback_data='first')
-#     item2 = types.InlineKeyboardButton("Уже бывал(а)", callback_data='been')
-#
-#     markup.add(item1, item2)
-#
-#     bot.send_message(message.from_user.id, 'Вы пришли на Левашовский хлебозавод первый раз или уже бывали у нас раньше?', reply_markup=markup)
-#
 
 
 
